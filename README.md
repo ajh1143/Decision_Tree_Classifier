@@ -301,3 +301,17 @@ def tree_viz(dtc, df):
     graph.format = 'png'
     graph.render('Hep', view=True)
 ```
+
+## Run
+```Python3
+minorEDA(df)
+check_integrity(df)
+df.dropna(inplace=True)
+X, y = set_target(df, 'Class')
+dtc = DecisionTree()
+X_train, X_test, y_train, y_test = TestTrain(X, y)
+model_test = FitData(dtc, X_train, y_train)
+y_pred = Predict(dtc, X_test)
+AccuracyCheck(model_test, X_test, y_pred)
+tree_viz(dtc, df)
+```
