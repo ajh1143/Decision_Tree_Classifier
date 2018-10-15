@@ -301,8 +301,7 @@ def tree_viz(dtc, df):
     graph.format = 'png'
     graph.render('Hep', view=True)
 ```
-
-<img src="https://github.com/ajh1143/Decision_Tree_Classifier/Images/graph_viz.png" class="inline"/><br>
+<img src="https://github.com/ajh1143//Decision_Tree_Classifier/images/graph_viz.png" class="inline"/><br>
 
 ## Run
 ```Python3
