@@ -47,7 +47,7 @@ Goal: Achieve the highest possible **accuracy**, while retaining the lowest **er
 
 ## Tree Data Structure - Fundamentals
 ### Reference Image
-<img src="https://github.com/ajh1143/blob/master/images/DTC/tree_anatomy.jpeg" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/tree_anatomy.jpeg" class="inline"/><br>
 
 Unlike common linear data structures, like `lists` and `arrays`, a `Tree` is a non-linear, hierarchical method of storing/modeling data. Visually, you can picture an evolutionary tree, a `document object model (DOM)` from HTML, or even a flow chart of a company hierarchy. In contrast to a biological tree originating of kingdom plantae, the data structure tree has a simple anatomy. 
 
@@ -58,11 +58,11 @@ There are 'specialized' kinds of nodes we classify by unique names which represe
 Beyond the core anatomy, the tree has unique metrics to be explored: **depth** and **height**. **Depth** refers to the spatial attributes of an individual node in relation to the root, meaning, how many links/edges are between the specific node and the root node. The **height**, refers to the number of edges in the longest possible path of the tree, similar to finding the longest carbon chain back in organic chemistry to determine the IUPAC name of the compound.
 
 ## Decision Tree
-<img src="https://github.com/ajh1143/KNN_ModelSelector/blob/master/Images/DTC/Decision_tree_anatomy.jpg" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Decision_tree_anatomy.jpg" class="inline"/><br>
 A decision tree, allows us to run a series of **if/elif/else** tests/questions on a data point, record, or observation with many attributes to be tested. Each node of this tree, would represent some condition of an attribute to test, and the edges/links are the results of this test constrained to some kind of binary decision. For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender, weight, height, activities etc. 
 
 ## Classification Plot - Simple
-<img src="https://github.com/ajh1143/KNN_ModelSelector/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>
 
 **Decision Region**: Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram. 
 
