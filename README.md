@@ -296,8 +296,8 @@ def tree_viz(dtc, df):
                  'Spleen_Palp', 'Spiders', 'Ascites', 'Varices', 'Bilirubin', 'Alk_Phosph', 'SGOT', 'Albumin',
                  'Protime',
                  'Histology']
-    dot = tree.export_graphviz(dtc, out_file=None, feature_names=col_names, class_names=class_n, filled=True, rounded=True,                                                                                                                special_characters=True)
+    dot = tree.export_graphviz(dtc, out_file=None, feature_names=col_names, class_names=class_n, filled=True, rounded=True,                                            special_characters=True)
     graph = graphviz.Source(dot)
     graph.format = 'png'
-    graph.render('iris', view=True)
+    graph.render('Hep', view=True)
 ```
