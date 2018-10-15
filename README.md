@@ -206,6 +206,7 @@ def check_integrity(input_df):
         pass
     print("\nNo Missing Data Was Detected.")
 ```
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/EDA_1_Hep.png" class="inline"/><br>
 
 ## Survey The Data
 ```Python3
@@ -230,6 +231,8 @@ def minorEDA(df):
     print(df.info())
     print(lineBreak*3)
 ```
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/EDA_1_Hep.png" class="inline"/><br>
+
 
 ## Set Label Target
 ```Python3
