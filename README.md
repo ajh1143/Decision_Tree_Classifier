@@ -47,7 +47,7 @@ Goal: Achieve the highest possible **accuracy**, while retaining the lowest **er
 
 ## Tree Data Structure - Fundamentals
 ### Reference Image
-<img src="https://github.com/ajh1143/KNN_ModelSelector/blob/master/Images/DTC/tree_anatomy.jpeg" class="inline"/><br>
+<img src="https://github.com/ajh1143/blob/master/images/DTC/tree_anatomy.jpeg" class="inline"/><br>
 
 Unlike common linear data structures, like `lists` and `arrays`, a `Tree` is a non-linear, hierarchical method of storing/modeling data. Visually, you can picture an evolutionary tree, a `document object model (DOM)` from HTML, or even a flow chart of a company hierarchy. In contrast to a biological tree originating of kingdom plantae, the data structure tree has a simple anatomy. 
 
