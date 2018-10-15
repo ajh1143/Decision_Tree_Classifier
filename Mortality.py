@@ -5,8 +5,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-import os
-os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
 def set_target(dataframe, target):
     """
     :param dataframe: Full dataset
@@ -26,7 +24,7 @@ def TestTrain(X, y):
     :return: X & Y test/train data
     """
     # Split into training and test set
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, stratify=y, random_state=1)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=1)
     return X_train, X_test, y_train, y_test
 
 def DecisionTree():
