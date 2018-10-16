@@ -4,7 +4,7 @@
 CART algorithms are `Supervised` learning models used for problems involving classification and regression.
 
 ## Supervised Learning
-Supervised learning is an approach for engineering predictive models from **known** labeled data. Our goal is to predict future labels (outputs), based on our features (inputs) when introduce to a novel dataset.
+Supervised learning is an approach for engineering predictive models from **known** labeled data. Our goal is to predict future labels (outputs), based on our features (inputs) when introduced to a novel dataset.
 
 ## Classification Example Problems
 1)Identifying fake profiles.
