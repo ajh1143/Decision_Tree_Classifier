@@ -144,11 +144,6 @@ We can now test our model by applying it to our `X_test` variable, and we'll sto
 y_pred = dt.predict(X_test)
 ```
 
-## Print predictions
-```Python3
-print(y_pred[0:5])
-```
-
 ## Check accuracy
 We want to check the accuracy of our model, and we can do so simply by calling `accuracy_score()` with `y_test` and `y_pred`.
 
