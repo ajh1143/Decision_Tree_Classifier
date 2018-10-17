@@ -168,7 +168,7 @@ acc = accuracy_score(y_test, y_pred)
 print("Test set accuracy: {:.2f}".format(acc))
 ```
 
-## Hepatitis: A Case Study
+# Hepatitis: A Case Study
 
 ## Tools
 ```Python3
