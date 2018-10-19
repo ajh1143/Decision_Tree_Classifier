@@ -1,4 +1,4 @@
-# Decision_Tree_Classifier
+# Decision Tree Classifier
 
 ## Classification and regression trees (CART) Algorithms
 CART algorithms are `Supervised` learning models used for problems involving classification and regression.
