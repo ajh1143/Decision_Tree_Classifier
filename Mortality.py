@@ -45,6 +45,29 @@ def AccuracyCheck(model, X_test, y_pred):
     acc = accuracy_score(y_test, y_pred)
     print('Default Accuracy: {}'.format(round(acc), 3))
 
+    def ConfusionMatx(y_test, y_pred):
+    print('Confusion Matrix: \n{}'.format(confusion_matrix(y_test, y_pred)))
+
+def MeanAbsErr(y_test, y_pred):
+    mean_err = metrics.mean_absolute_error(y_test, y_pred)
+    print('Mean Absolute Error: {}'.format(round(mean_err), 3))
+
+def MeanSqErr(y_test, y_pred):
+    SqErr = metrics.mean_squared_error(y_test, y_pred)
+    print('Mean Squared Error: {}'.format(round(SqErr), 3))
+
+def DTCScore(X, y, dtc):
+    score = dtc.score(X, y, sample_weight=None)
+    print('Score: {}'.format(round(score)))
+
+def MetricReport(X, y, y_test, y_pred, dtc):
+    print("Metric Summaries")
+    print("-"*16)
+    ConfusionMatx(y_test, y_pred)
+    MeanAbsErr(y_test, y_pred)
+    MeanSqErr(y_test, y_pred)
+    DTCScore(X, y, dtc)
+    print("-" * 16)
 
 def tree_viz(dtc, df, col_names):
     class_n = "Class"
@@ -115,3 +138,4 @@ model_test = FitData(dtc, X_train, y_train)
 y_pred = Predict(dtc, X_test)
 AccuracyCheck(model_test, X_test, y_pred)
 tree_viz(dtc, df, col_names)
+MetricReport(X, y, y_test, y_pred, dtc)
