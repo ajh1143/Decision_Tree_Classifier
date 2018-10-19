@@ -52,8 +52,13 @@ Goal: Achieve the highest possible **accuracy**, while retaining the lowest **er
 
 `Error rate` = `# number wrong predictions / # total predictions`
 
-## Confusion Matrix
+**Confusion Matrix**: Summarizes error rate in terms of true/false positives/negatives. 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>
+
+**Mean Squared Error**: Computed average squared difference between the estimated values, and what is being estimated.
+
+**Score**:  Mean accuracy on the given test data and labels
+
 
 ## Tree Data Structure - Fundamentals
 ### Reference Image
