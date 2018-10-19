@@ -224,7 +224,7 @@ def check_integrity(input_df):
         pass
     print("\nNo Missing Data Was Detected.")
 ```
-<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/EDA_1_Hep.png" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/EDA_2_Hep.png" class="inline"/><br>
 
 ## Survey The Data
 ```Python3
