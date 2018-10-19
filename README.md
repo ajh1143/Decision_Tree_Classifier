@@ -52,6 +52,9 @@ Goal: Achieve the highest possible **accuracy**, while retaining the lowest **er
 
 `Error rate` = `# number wrong predictions / # total predictions`
 
+## Confusion Matrix
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>
+
 ## Tree Data Structure - Fundamentals
 ### Reference Image
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/tree_anatomy.jpeg" class="inline"/><br>
