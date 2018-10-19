@@ -311,12 +311,8 @@ def AccuracyCheck(model, X_test, y_pred):
 
 ## Visualize Tree Graph
 ```Python3
-def tree_viz(dtc, df):
+def tree_viz(dtc, df, col_names):
     class_n = "Class"
-    col_names = ['Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise', 'Anorexia', 'Liver_Big', 'Liver_Firm',
-                 'Spleen_Palp', 'Spiders', 'Ascites', 'Varices', 'Bilirubin', 'Alk_Phosph', 'SGOT', 'Albumin',
-                 'Protime',
-                 'Histology']
     dot = tree.export_graphviz(dtc, out_file=None, feature_names=col_names, class_names=class_n, filled=True, rounded=True,                                            special_characters=True)
     graph = graphviz.Source(dot)
     graph.format = 'png'
@@ -327,6 +323,12 @@ def tree_viz(dtc, df):
 
 ## Run
 ```Python3
+path = 'C:\\Users\\ajh20\\Desktop\\hepatitis.csv'
+col_names = ['Class', 'Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise','Anorexia', 'Liver_Big', 'Liver_Firm',
+             'Spleen_Palp', 'Spiders', 'Ascites', 'Varices', 'Bilirubin', 'Alk_Phosph', 'SGOT', 'Albumin', 'Protime',
+             'Histology' ]
+csv = pd.read_csv(path, na_values=["?"], names=col_names)
+df = pd.DataFrame(csv)
 minorEDA(df)
 check_integrity(df)
 df.dropna(inplace=True)
@@ -336,7 +338,7 @@ X_train, X_test, y_train, y_test = TestTrain(X, y)
 model_test = FitData(dtc, X_train, y_train)
 y_pred = Predict(dtc, X_test)
 AccuracyCheck(model_test, X_test, y_pred)
-tree_viz(dtc, df)
+tree_viz(dtc, df, col_names)
 ```
 
 ## All-In-One
@@ -389,12 +391,8 @@ def AccuracyCheck(model, X_test, y_pred):
     print('Default Accuracy: {}'.format(round(acc), 3))
 
 
-def tree_viz(dtc, df):
+def tree_viz(dtc, df, col_names):
     class_n = "Class"
-    col_names = ['Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise', 'Anorexia', 'Liver_Big', 'Liver_Firm',
-                 'Spleen_Palp', 'Spiders', 'Ascites', 'Varices', 'Bilirubin', 'Alk_Phosph', 'SGOT', 'Albumin',
-                 'Protime',
-                 'Histology']
     dot = tree.export_graphviz(dtc, out_file=None, feature_names=col_names, class_names=class_n, filled=True, rounded=True, special_characters=True)
     graph = graphviz.Source(dot)
     graph.format = 'png'
@@ -461,5 +459,6 @@ X_train, X_test, y_train, y_test = TestTrain(X, y)
 model_test = FitData(dtc, X_train, y_train)
 y_pred = Predict(dtc, X_test)
 AccuracyCheck(model_test, X_test, y_pred)
-tree_viz(dtc, df)
+tree_viz(dtc, df, col_names)
+
 ```
