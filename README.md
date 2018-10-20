@@ -17,7 +17,7 @@ Supervised learning is an approach for engineering predictive models from **know
 
 * Objective is to infer class labels from previously unseen data.
 
-* Algorithmically, it is a recursive and greedy solution. 
+* Algorithmically, it is a recursive(*divide & conquer*) and greedy(*favors optimization*) solution. 
 
 * Is a sequence of if-else questions about features.
 
