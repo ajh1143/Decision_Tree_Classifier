@@ -4,7 +4,7 @@
 CART algorithms are `Supervised` learning models used for problems involving classification and regression.
 
 ## Supervised Learning
-Supervised learning is an approach for engineering predictive models from **known** labeled data. Our goal is to predict future labels (outputs), based on our features (inputs) when introduced to a novel dataset.
+Supervised learning is an approach for engineering predictive models from **known** labeled data, meaning the dataset already contains the targets appropriately classed. Our goal is to allow the algorithm to build a model from this known data, to predict future labels (outputs), based on our features (inputs) when introduced to a novel dataset.
 
 ## Classification Example Problems
 1)Identifying fake profiles.
@@ -14,39 +14,45 @@ Supervised learning is an approach for engineering predictive models from **know
 3)Predicting what sport someone plays.
 
 ## Classification Tree - Overview
-Sequence of if-else questions about features.
 
-Objective is to infer class labels from unseen data.
+Objective is to infer class labels from previously unseen data.
 
-Capture non-linear relationships between features and labels.
+Is a sequence of if-else questions about features.
 
-No feature scaling required.
+Captures non-linear relationships between features and labels.
+
+No feature is scaling required.
 
 ## Classification Model - Approach
 
-Let's briefly set a mental framework for approaching the creation of a classification model. Like all things data, we'll begin with a dataset. 
+Let's briefly set a mental framework for approaching the creation of a classification model. 
+
+Like all things data, we'll begin with a dataset. 
 
 Next, we'll need to break it into **training** and **test** sets. 
 
-We can then use the **training** dataset with a learning algorithm (in our case, the scikit-learn DecisionTreeClassifier) to create a model via **induction**, which is then applied to make predictions on the test set of data through **deduction**. 
+We can then use the **training** dataset with a learning algorithm (in our case, the **scikit-learn DecisionTreeClassifier** module) to create a model via **induction**, which is then applied to make predictions on the test set of data through **deduction**. 
 
 Here's a general schematic view of the concept. 
 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/workflow.png" class="inline"/><br>
 
 ## Model Concerns
+As powerful as the technique can be, it needs a strong foundation and human-level quality control.
 
-Are you selecting the **right problem** to test?
+Here are some points to consider as you prepare for your ML task:
 
-Are you capable of supplying **sufficient data**?
+**A)** Are you selecting the **right problem** to test?
 
-Are you providing your model **clean data**?
+**B)** Are you capable of supplying **sufficient data**?
 
-Are you able to prevent algorithmic **biases and confounding factors**?
+**C)** Are you providing your model **clean data**?
+
+**D)** Are you able to prevent algorithmic **biases and confounding factors**?
 
 ## Performance Metrics
 
-Goal: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
+**Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
 
 `Accuracy`  = `# correct predictions / # total predictions`
 
@@ -63,11 +69,13 @@ Goal: Achieve the highest possible **accuracy**, while retaining the lowest **er
 ### Reference Image
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/tree_anatomy.jpeg" class="inline"/><br>
 
-Unlike common linear data structures, like `lists` and `arrays`, a `Tree` is a non-linear, hierarchical method of storing/modeling data. Visually, you can picture an evolutionary tree, a `document object model (DOM)` from HTML, or even a flow chart of a company hierarchy. In contrast to a biological tree originating of kingdom plantae, the data structure tree has a simple anatomy. 
+Unlike common linear data structures, like `lists` and `arrays`, a `Tree` is a non-linear, hierarchical method of storing/modeling data. Visually, you can picture an evolutionary tree, a `document object model (DOM)` from HTML, or even a flow chart of a company hierarchy. 
+
+In contrast to a biological tree originating of kingdom plantae, the data structure tree has a simple anatomy:
 
 A tree consists of **nodes** and **edges**. 
 
-There are 'specialized' kinds of nodes we classify by unique names which represent their place on the hierarchy of our structure. 
+There are 'specialized' node types classified by unique names which represent their place on the hierarchy of the structure. 
 
 The **root** node, is a single point of origin for the rest of the tree. Branches can extend from nodes and link to other nodes, with the link referred to as an **edge**. 
 
@@ -79,7 +87,9 @@ Finally, **sibling** nodes are nodes which share a parent.
 
 Beyond the core anatomy, the tree has unique metrics to be explored: **depth** and **height**. 
 
-**Depth** refers to the spatial attributes of an individual node in relation to the root, meaning, how many links/edges are between the specific node and the root node. The **height**, refers to the number of edges in the longest possible path of the tree, similar to finding the longest carbon chain back in organic chemistry to determine the IUPAC name of the compound.
+**Depth** refers to the spatial attributes of an individual node in relation to the root, meaning, how many links/edges are between the specific node and the root node. 
+
+The **height**, refers to the number of edges in the longest possible path of the tree, similar to finding the longest carbon chain back in organic chemistry to determine the IUPAC name of the compound.
 
 ## Decision Tree
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Decision_tree_anatomy.jpg" class="inline"/><br>
