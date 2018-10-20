@@ -220,7 +220,7 @@ def MeanAbsErr(y_test, y_pred):
     mean_err = metrics.mean_absolute_error(y_test, y_pred)
     print('Mean Absolute Error: {}'.format(round(mean_err), 3))
 ```
-**Mean Squared Error*
+**Mean Squared Error**
 ```Python3
 def MeanSqErr(y_test, y_pred):
     SqErr = metrics.mean_squared_error(y_test, y_pred)
@@ -232,6 +232,19 @@ def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
 ```    
+**Combine Them**
+Thanks to the power of Python, we can run all of the tests in one go:
+```Python3
+def MetricReport(X, y, y_test, y_pred, dtc):
+    print("Metric Summaries")
+    print("-"*16)
+    ConfusionMatx(y_test, y_pred)
+    MeanAbsErr(y_test, y_pred)
+    MeanSqErr(y_test, y_pred)
+    DTCScore(X, y, dtc)
+    print("-" * 16)
+```
+
 # Hepatitis: A Case Study
 
 ## Tools
