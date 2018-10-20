@@ -230,7 +230,7 @@ def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
 ```    
-**Summary Report**
+**Summary Report**    
 Thanks to the power of Python, we can run all of the tests in one go via scripting:
 ```Python3
 def MetricReport(X, y, y_test, y_pred, dtc):
