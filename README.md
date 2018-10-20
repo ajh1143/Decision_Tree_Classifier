@@ -133,9 +133,9 @@ For example, if we had a dataset with rich features about a human, we could ask 
 ## Classification Plot - Simple
 * Terminology    
 Term | Meaning
------------- | -------------
-**Decision Region**:| Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram.     
-**Decision Boundary**:| Point of transition from one decision region to another, aka one class/label to another, the diagonal black line.
+|------------ | -------------|
+|**Decision Region**:| Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram.|     
+|**Decision Boundary**:| Point of transition from one decision region to another, aka one class/label to another, the diagonal black line.|
 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>  
 `Source: Vipin Kumar CSci 8980 Fall 2002 13 Oblique Decision Trees`
