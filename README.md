@@ -35,7 +35,8 @@ We can then use the **training** dataset with a learning algorithm (in our case,
 
 Here's a general schematic view of the concept. 
 
-<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/workflow.png" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/workflow.png" class="inline"/><br>    
+`Source: https://www-users.cs.umn.edu/~kumar001/dmbook/dmslides/chap4_basic_classification.pdf`
 
 ## Model Concerns
 As powerful as the technique can be, it needs a strong foundation and human-level quality control.
@@ -78,7 +79,8 @@ Summarizes error rate in terms of true/false positives/negatives.
 
 While the rest of the tests outlined above return simple numbers to interpret, the confusion matrix needs a primer on interpetation.
 
-<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>    
+`Source: https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-S4-S2`
 
 Calling `confusion_matrix()` will yield a result in the form:    
 `[TP,FP]`   
@@ -121,6 +123,7 @@ For example, if we had a dataset with rich features about a human, we could ask 
 
 ## Classification Plot - Simple
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>  
+`Source: Vipin Kumar CSci 8980 Fall 2002 13 Oblique Decision Trees`
 
 **Decision Region**: Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram. 
 
