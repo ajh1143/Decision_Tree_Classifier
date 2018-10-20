@@ -59,10 +59,21 @@ def MeanSqErr(y_test, y_pred):
 def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
+    
+def feature_finder(df, model):
+    """
+    Calculates and prints feature importance
+    :args: df - dataframe of dataset
+           model - fitted model
+    :return none:
+    """
+    features = dict(zip(df.columns, model.feature_importances_))
+    print(features)
 
-def MetricReport(X, y, y_test, y_pred, dtc):
+def MetricReport(df, X, y, y_test, y_pred, dtc, model):
     print("Metric Summaries")
     print("-"*16)
+    feature_finder(df, model)
     ConfusionMatx(y_test, y_pred)
     MeanAbsErr(y_test, y_pred)
     MeanSqErr(y_test, y_pred)
@@ -138,4 +149,4 @@ model_test = FitData(dtc, X_train, y_train)
 y_pred = Predict(dtc, X_test)
 AccuracyCheck(model_test, X_test, y_pred)
 tree_viz(dtc, df, col_names)
-MetricReport(X, y, y_test, y_pred, dtc)
+MetricReport(df, X, y, y_test, y_pred, dtc, model_test)
