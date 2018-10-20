@@ -64,26 +64,26 @@ A cautious interpretation of seemingly powerful results is encouraged.
 **Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
 
 **Accuracy Score**  
-*`accuracy_score(y_test, y_pred)`    
+* `accuracy_score(y_test, y_pred)`    
 The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points.  
 
 
 **Mean Squared Error**  
-*`mean_squared_error(y_test, y_pred)`    
+* `mean_squared_error(y_test, y_pred)`    
 Computed average squared difference between the estimated values, and what is being estimated.  
 
 
 **Mean Absolute Error**  
-*`mean_absolute_error(y_test, y_pred)`    
+* `mean_absolute_error(y_test, y_pred)`    
 The mean absolute error reflects the magnitude of difference between the prediction and actual.  
 
 **Score**  
-*`score(features, target)`    
+* `score(features, target)`    
 Mean accuracy on the given test data and labels  
 
 
 **Confusion Matrix**  
-*`confusion_matrix(y_test, y_pred)`    
+* `confusion_matrix(y_test, y_pred)`    
 Summarizes error rate in terms of true/false positives/negatives.    
 
 While the rest of the tests outlined above return simple numbers to interpret, the confusion matrix needs a primer on interpetation.
