@@ -463,7 +463,7 @@ tree_viz(dtc, df, col_names)
 ```
 
 ## All-In-One
-```
+```Python3
 import pandas as pd
 import graphviz
 from sklearn import tree
