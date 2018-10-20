@@ -414,7 +414,7 @@ def MetricReport(X, y, y_test, y_pred, dtc):
 ```Python3
 def tree_viz(dtc, df, col_names):
     class_n = "Class"
-    dot = tree.export_graphviz(dtc, out_file=None, feature_names=col_names, class_names=class_n, filled=True, rounded=True,                                            special_characters=True)
+    dot = tree.export_graphviz(dtc, out_file=None, feature_names=col_names, class_names=class_n, filled=True, rounded=True,                                             special_characters=True)
     graph = graphviz.Source(dot)
     graph.format = 'png'
     graph.render('Hep', view=True)
