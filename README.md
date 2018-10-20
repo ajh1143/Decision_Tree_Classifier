@@ -35,7 +35,7 @@ Like all things data, we'll begin with a dataset.
 
 Next, we'll need to break it into **training** and **test** sets. 
 
-We can then use the **training** dataset with a learning algorithm (in our case, the **scikit-learn DecisionTreeClassifier** module) to create a model via **induction**, which is then applied to make predictions on the test set of data through **deduction**. 
+We can then use the **training** dataset with a learning algorithm (in our case, the **scikit-learn DecisionTreeClassifier** module) to create a **model** via **induction**, which is then applied to make predictions on the test set of data through **deduction**. 
 
 Here's a general schematic view of the concept. 
 
