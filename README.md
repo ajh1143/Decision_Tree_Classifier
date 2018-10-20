@@ -19,7 +19,7 @@ Supervised learning is an approach for engineering predictive models from **know
 
 * Algorithmically, it is a recursive(*divide & conquer*) and greedy(*favors optimization*) solution. 
 
-* Is a sequence of if-else questions about features.
+* Is a sequence of if-else questions about features, essentially playing "20 Questions".
 
 * Captures non-linear relationships between features and labels.
 
