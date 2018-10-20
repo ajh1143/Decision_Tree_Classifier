@@ -56,24 +56,24 @@ It should be noted at the onset, that simple Decision Trees are highly prone to 
 
 **Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
 
-**Accuracy Score** 
-The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points. 
+**Accuracy Score**  
+The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points.  
 `accuracy_score(y_test, y_pred)`
 
-**Mean Squared Error** 
-Computed average squared difference between the estimated values, and what is being estimated. 
+**Mean Squared Error**  
+Computed average squared difference between the estimated values, and what is being estimated.  
 `mean_squared_error(y_test, y_pred)`
 
-**Mean Absolute Error** 
-The mean absolute error reflects the magnitude of difference between the prediction and actual. 
+**Mean Absolute Error**  
+The mean absolute error reflects the magnitude of difference between the prediction and actual.  
 `mean_absolute_error(y_test, y_pred)`
 
 **Score**  
-Mean accuracy on the given test data and labels 
+Mean accuracy on the given test data and labels  
 `score(features, target)`
 
-**Confusion Matrix**
-Summarizes error rate in terms of true/false positives/negatives.  
+**Confusion Matrix**  
+Summarizes error rate in terms of true/false positives/negatives.    
 `confusion_matrix(y_test, y_pred)`
 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>
