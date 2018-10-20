@@ -131,12 +131,12 @@ A decision tree, allows us to run a series of **if/elif/else** tests/questions o
 For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender(M/F/O), weight(Above/Below a value), height(Above/Below a value), activities(Sets of choices) to make a prediction. 
 
 ## Classification Plot - Simple
+* Terminology    
+**Decision Region**: Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram.     
+**Decision Boundary**: Point of transition from one decision region to another, aka one class/label to another, the diagonal black line.
+
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>  
 `Source: Vipin Kumar CSci 8980 Fall 2002 13 Oblique Decision Trees`
-
-**Decision Region**: Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram. 
-
-**Decision Boundary**: Point of transition from one decision region to another, aka one class/label to another, the diagonal black line.
 
 
 ## Feature Selection
