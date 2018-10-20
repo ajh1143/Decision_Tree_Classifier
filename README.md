@@ -118,7 +118,8 @@ A decision tree, allows us to run a series of **if/elif/else** tests/questions o
 For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender, weight, height, activities etc. 
 
 ## Classification Plot - Simple
-<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>  
+`Source: Machine Learning 10601 Recitation 8 Oct 21, 2009 Oznur Tastan`
 
 **Decision Region**: Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram. 
 
