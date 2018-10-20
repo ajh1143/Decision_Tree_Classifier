@@ -87,6 +87,7 @@ Calling `confusion_matrix()` will yield a result in the form:
 ## Tree Data Structure - Fundamentals
 ### Reference Image
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/tree_anatomy.jpeg" class="inline"/><br>
+`Source: Data Structure Tree Diagram - artbattlesu.com`
 
 Unlike common linear data structures, like `lists` and `arrays`, a `Tree` is a non-linear, hierarchical method of storing/modeling data. Visually, you can picture an evolutionary tree, a `document object model (DOM)` from HTML, or even a flow chart of a company hierarchy. 
 
