@@ -81,7 +81,7 @@ def MetricReport(df, X, y, y_test, y_pred, dtc, model):
     print("-" * 16)
 
 def tree_viz(dtc, df, col_names):
-    class_n = "Class"
+    class_n = ["Non-Survival", "Survival"]
     dot = tree.export_graphviz(dtc, out_file=None, feature_names=col_names, class_names=class_n, filled=True, rounded=True, special_characters=True)
     graph = graphviz.Source(dot)
     graph.format = 'png'
