@@ -433,14 +433,25 @@ def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
 
-def MetricReport(X, y, y_test, y_pred, dtc):
+def feature_finder(df, model):
+    """
+    Calculates and prints feature importance
+    :args: df - dataframe of dataset
+           model - fitted model
+    :return none:
+    """
+    features = dict(zip(df.columns, model.feature_importances_))
+    print(features)
+
+def MetricReport(df, X, y, y_test, y_pred, dtc, model):
     print("Metric Summaries")
     print("-"*16)
+    feature_finder(df, model)
     ConfusionMatx(y_test, y_pred)
     MeanAbsErr(y_test, y_pred)
     MeanSqErr(y_test, y_pred)
     DTCScore(X, y, dtc)
-    print("-" * 16)    
+    print("-" * 16)
 ```
 
 ## Visualize Tree Graph
