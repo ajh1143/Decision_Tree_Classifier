@@ -109,7 +109,7 @@ Finally, **sibling** nodes are nodes which share a parent.
 
 Beyond the core anatomy, the tree has unique metrics to be explored: **depth** and **height**. 
 
-**Depth** refers to the spatial attributes of an individual node in relation to the root, meaning, how many links/edges are between the specific node and the root node. 
+**Depth** refers to the spatial attributes of an individual node in relation to the root, meaning, how many links/edges are between the specific node and the root node. You could also think of it as the position of the node from `root:0` to `leaf:m` depth. 
 
 The **height**, refers to the number of edges in the longest possible path of the tree, similar to finding the longest carbon chain back in organic chemistry to determine the IUPAC name of the compound.
 
