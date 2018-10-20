@@ -53,7 +53,9 @@ Here are some points to consider as you prepare for your ML task:
 
 ## Performance Metrics
 
-It should be noted at the onset, that simple Decision Trees are highly prone to **overfitting**, leading to models which are **difficult to generalize**. One method of mitigating this potential risk is to engage in **pruning** of the tree, i.e., removing parts of the tree which confer no/low power to the model. Cautious interpretation of seemingly powerful results is encouraged.
+It should be noted at the onset, that simple Decision Trees are highly prone to **overfitting**, leading to models which are **difficult to generalize**. One method of mitigating this potential risk is to engage in **pruning** of the tree, i.e., removing parts of the tree which confer no/low power to the model. We will discuss methods of pruning shortly. 
+
+A cautious interpretation of seemingly powerful results is encouraged.
 
 **Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
 
@@ -117,9 +119,9 @@ The **height**, refers to the number of edges in the longest possible path of th
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Decision_tree_anatomy.jpg" class="inline"/><br>    
 `Source: Machine Learning 10601 Recitation 8 Oct 21, 2009 Oznur Tastan`
 
-A decision tree, allows us to run a series of **if/elif/else** tests/questions on a data point, record, or observation with many attributes to be tested. Each node of this tree, would represent some condition of an attribute to test, and the edges/links are the results of this test constrained to some kind of binary decision. 
+A decision tree, allows us to run a series of **if/elif/else** tests/questions on a data point, record, or observation with many attributes to be tested. Each node of this tree, would represent some condition of an attribute to test, and the edges/links are the results of this test constrained to some kind of binary decision. An observation travels through each stage, being assayed and partitioned, to reach a leaf node. The leaf contains the final proposed classification. 
 
-For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender, weight, height, activities etc. 
+For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender(M/F/O), weight(Above/Below a value), height(Above/Below a value), activities(Sets of choices) to make a prediction. 
 
 ## Classification Plot - Simple
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>  
@@ -134,7 +136,16 @@ For example, if we had a dataset with rich features about a human, we could ask 
 
 Identification of which features/columns with the highest weights in predictive power. 
 
-In our case, the CART algorithm will do the feature selection for us through the `Gini Index` or `Entropy` which measure how pure your data is partitioned through it's journey to a final leaf node classification.  
+In our case, the CART algorithm will do the feature selection for us through the `Gini Index` or `Entropy` which measure how pure your data is partitioned through it's journey to a final leaf node classification.
+
+## Pruning
+As we discussed earlier, decision trees are prone to overfitting. **Pruning** is one way to mitigate the influence. As each node is a test, and each branch is a result of this test, we can **prune** unproductive branches which contribute to overfitting. By removing them, we can further generalize the model.
+
+## Pre-Pruning
+One strategy for pruning is known as **pre-pruning**. This method relies on ending the series of tests early, stopping the partitioning process. When stopped, what was previously a non-leaf node, becomes the leaf node and a class is declared. 
+
+## Post-Pruning
+**Post-Pruning** is a different approach. Where **pre-pruning** occurs during creation of the model, **post-pruning** begins after the process is complete through the removal of branches. Sets of node removals are tested throughout the branches, to examine the effect on error-rates. If removing particular nodes increases the error-rate, pruning does not occur at those positions. The final tree contains a version of the tree with the lowest expected error-rate. 
 
 ## Decision Tree Classification: Steps to Build and Run
 
