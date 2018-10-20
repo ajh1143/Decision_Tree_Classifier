@@ -81,6 +81,9 @@ The mean absolute error reflects the magnitude of difference between the predict
 * `score(features, target)`    
 Mean accuracy on the given test data and labels  
 
+**Feature Importance**    
+* `model.feature_importances_`    
+Identifies the features with the most weight in the model.
 
 **Confusion Matrix**  
 * `confusion_matrix(y_test, y_pred)`    
@@ -143,7 +146,7 @@ For example, if we had a dataset with rich features about a human, we could ask 
 
 ## Feature Selection
 
-Identification of which features/columns with the highest weights in predictive power. 
+Identification of which features/columns with the highest weights in predictive power. We can manually view the importance of our features with `model.feature_importances_` as noted earlier.
 
 In our case, the CART algorithm will do the feature selection for us through the `Gini Index` or `Entropy` which measure how pure your data is partitioned through it's journey to a final leaf node classification.
 
@@ -255,6 +258,18 @@ def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
 ```    
+**Feature Importance**
+```Python3
+def feature_finder(df, model):
+    """
+    Calculates and prints feature importance
+    :args: df - dataframe of dataset
+           model - fitted model
+    :return none:
+    """
+    features = dict(zip(df.columns, model.feature_importances_))
+    print(features)
+```
 **Summary Report**    
 Thanks to the power of Python, we can run all of the tests in one go via scripting:
 ```Python3
