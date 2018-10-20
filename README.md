@@ -52,7 +52,13 @@ Here are some points to consider as you prepare for your ML task:
 
 ## Performance Metrics
 
+It should be noted at the onset, that simple Decision Trees are highly prone to **overfitting**, leading to models which are **difficult to generalize**. One method of mitigating this potential risk is to engage in **pruning** of the tree, i.e., removing parts of the tree which confer no/low power to the model. Cautious interpretation of seemingly powerful results is encouraged.
+
 **Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
+
+**Accuracy Score**
+
+The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points.
 
 `Accuracy`  = `# correct predictions / # total predictions`
 
@@ -179,11 +185,9 @@ y_pred = dt.predict(X_test)
 
 ## 7-Check Performance Metrics
 
-It should be noted at the onset, that simple Decision Trees are prone to **overfitting**, leading to models which are **difficult to generalize**.
-
 We want to check the accuracy of our model, and we can do so simply by calling `accuracy_score()` with `y_test` and `y_pred`.
 
-**Accuracy**
+**Accuracy Score**
 ```Python3
 acc = accuracy_score(y_test, y_pred)
 print("Test set accuracy: {:.2f}".format(acc))
