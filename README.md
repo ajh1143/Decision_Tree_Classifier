@@ -270,6 +270,31 @@ csv = pd.read_csv(path, na_values=["?"], names=col_names)
 df = pd.DataFrame(csv)
 ```
 
+## Survey The Data
+```Python3
+def minorEDA(df):
+    """
+    Generates a preliminary EDA Analysis of our file
+    args: df - DataFrame of our excel file
+    returns: None
+    """
+    lineBreak = '------------------'
+    #Check Shape
+    print(lineBreak*3)
+    print("Shape:")
+    print(df.shape)
+    print(lineBreak*3)
+    #Check Feature Names
+    print("Column Names")
+    print(df.columns)
+    print(lineBreak*3)
+    #Check types, missing, memory
+    print("Data Types, Missing Data, Memory")
+    print(df.info())
+    print(lineBreak*3)
+```
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/EDA_1_Hep.png" class="inline"/><br>
+
 ## Check Integrity
 ```Python3
 def check_integrity(input_df):
@@ -297,31 +322,7 @@ def check_integrity(input_df):
 ```
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/EDA_2_Hep.png" class="inline"/><br>
 
-## Survey The Data
-```Python3
-def minorEDA(df):
-    """
-    Generates a preliminary EDA Analysis of our file
-    args: df - DataFrame of our excel file
-    returns: None
-    """
-    lineBreak = '------------------'
-    #Check Shape
-    print(lineBreak*3)
-    print("Shape:")
-    print(df.shape)
-    print(lineBreak*3)
-    #Check Feature Names
-    print("Column Names")
-    print(df.columns)
-    print(lineBreak*3)
-    #Check types, missing, memory
-    print("Data Types, Missing Data, Memory")
-    print(df.info())
-    print(lineBreak*3)
-```
-<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/EDA_1_Hep.png" class="inline"/><br>
-
+Unfortunately this set contains missing data points, if we don't clean them up, we'll recieve an error. To do this, `df.dropna(inplace=True)` in the `__main__` portion of our program will allow us to continue, but our model will ultimately be weaker due to missing inputs.
 
 ## Set Label Target
 ```Python3
