@@ -111,7 +111,8 @@ Beyond the core anatomy, the tree has unique metrics to be explored: **depth** a
 The **height**, refers to the number of edges in the longest possible path of the tree, similar to finding the longest carbon chain back in organic chemistry to determine the IUPAC name of the compound.
 
 ## Decision Tree
-<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Decision_tree_anatomy.jpg" class="inline"/><br>
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Decision_tree_anatomy.jpg" class="inline"/><br>    
+`Source: Machine Learning 10601 Recitation 8 Oct 21, 2009 Oznur Tastan`
 
 A decision tree, allows us to run a series of **if/elif/else** tests/questions on a data point, record, or observation with many attributes to be tested. Each node of this tree, would represent some condition of an attribute to test, and the edges/links are the results of this test constrained to some kind of binary decision. 
 
@@ -119,7 +120,6 @@ For example, if we had a dataset with rich features about a human, we could ask 
 
 ## Classification Plot - Simple
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>  
-`Source: Machine Learning 10601 Recitation 8 Oct 21, 2009 Oznur Tastan`
 
 **Decision Region**: Space where instances become assigned to particular class, blue or red, in the plotting space in the diagram. 
 
