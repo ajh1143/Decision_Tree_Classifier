@@ -236,10 +236,11 @@ Thanks to the power of Python, we can run all of the tests in one go via scripti
 def MetricReport(X, y, y_test, y_pred, dtc):
     print("Metric Summaries")
     print("-"*16)
-    ConfusionMatx(y_test, y_pred)
+    AccuracyCheck(model, X_test, y_pred)
     MeanAbsErr(y_test, y_pred)
     MeanSqErr(y_test, y_pred)
     DTCScore(X, y, dtc)
+    ConfusionMatx(y_test, y_pred)
     print("-" * 16)
 ```
 
