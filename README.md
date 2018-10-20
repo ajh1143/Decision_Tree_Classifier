@@ -246,7 +246,9 @@ def MetricReport(X, y, y_test, y_pred, dtc):
 
 # Hepatitis: A Case Study
 
-## Tools
+We'll follow the procedures above, with a few twists. We're going to add a way to visualize our decision tree graph, as well as apply a real dataset using the tools and approaches outlined. 
+
+## Imports
 ```Python3
 import pandas as pd
 import graphviz
