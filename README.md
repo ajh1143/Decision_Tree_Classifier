@@ -60,15 +60,30 @@ It should be noted at the onset, that simple Decision Trees are highly prone to 
 
 The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points.
 
-`Accuracy`  = `# correct predictions / # total predictions`
+`accuracy_score(y_test, y_pred)`
 
-`Error rate` = `# number wrong predictions / # total predictions`
+**Mean Squared Error**
 
-**Mean Squared Error**: Computed average squared difference between the estimated values, and what is being estimated.
+Computed average squared difference between the estimated values, and what is being estimated.
 
-**Score**:  Mean accuracy on the given test data and labels
+`mean_squared_error(y_test, y_pred)`
 
-**Confusion Matrix**: Summarizes error rate in terms of true/false positives/negatives. 
+**Mean Absolute Error**
+
+The mean absolute error reflects the magnitude of difference between the prediction and actual. 
+
+`mean_absolute_error(y_test, y_pred)`
+
+**Score**  
+Mean accuracy on the given test data and labels
+
+`score(features, target)`
+
+**Confusion Matrix**
+Summarizes error rate in terms of true/false positives/negatives. 
+
+`confusion_matrix(y_test, y_pred)`
+
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>
 
 ## Tree Data Structure - Fundamentals
@@ -189,13 +204,34 @@ We want to check the accuracy of our model, and we can do so simply by calling `
 
 **Accuracy Score**
 ```Python3
-acc = accuracy_score(y_test, y_pred)
-print("Test set accuracy: {:.2f}".format(acc))
+def AccuracyCheck(model, X_test, y_pred):
+    acc = accuracy_score(y_test, y_pred)
+    print('Default Accuracy: {}'.format(round(acc), 3))
 ```
 **Confusion Matrix**
 ```Python3
-confusion_matrix(y_test, y_pred)
+def ConfusionMatx(y_test, y_pred):
+    print('Confusion Matrix: \n{}'.format(confusion_matrix(y_test, y_pred)))
 ```
+
+**Mean Absolute Error**
+```Python3
+def MeanAbsErr(y_test, y_pred):
+    mean_err = metrics.mean_absolute_error(y_test, y_pred)
+    print('Mean Absolute Error: {}'.format(round(mean_err), 3))
+```
+**Mean Squared Error*
+```Python3
+def MeanSqErr(y_test, y_pred):
+    SqErr = metrics.mean_squared_error(y_test, y_pred)
+    print('Mean Squared Error: {}'.format(round(SqErr), 3))
+```
+**Score**
+```Python3
+def DTCScore(X, y, dtc):
+    score = dtc.score(X, y, sample_weight=None)
+    print('Score: {}'.format(round(score)))
+```    
 # Hepatitis: A Case Study
 
 ## Tools
