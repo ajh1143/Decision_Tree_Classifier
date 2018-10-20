@@ -446,6 +446,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
+
 def set_target(dataframe, target):
     """
     :param dataframe: Full dataset
@@ -468,38 +469,47 @@ def TestTrain(X, y):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=1)
     return X_train, X_test, y_train, y_test
 
+
 def DecisionTree():
     # Build Decision Tree Classifier
     dtc = DecisionTreeClassifier(max_depth=6, random_state=2)
     return dtc
 
+
 def FitData(DTC, X_train, y_train):
     # Fit training data
     return DTC.fit(X_train, y_train)
 
+
 def Predict(dtc, test_x):
     y_pred = dtc.predict(test_x)
     return y_pred
+
 
 def AccuracyCheck(model, X_test, y_pred):
     #Cneck Accuracy Score
     acc = accuracy_score(y_test, y_pred)
     print('Default Accuracy: {}'.format(round(acc), 3))
 
+
 def ConfusionMatx(y_test, y_pred):
     print('Confusion Matrix: \n{}'.format(confusion_matrix(y_test, y_pred)))
+
 
 def MeanAbsErr(y_test, y_pred):
     mean_err = metrics.mean_absolute_error(y_test, y_pred)
     print('Mean Absolute Error: {}'.format(round(mean_err), 3))
 
+
 def MeanSqErr(y_test, y_pred):
     SqErr = metrics.mean_squared_error(y_test, y_pred)
     print('Mean Squared Error: {}'.format(round(SqErr), 3))
 
+
 def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
+
 
 def MetricReport(X, y, y_test, y_pred, dtc):
     print("Metric Summaries")
@@ -509,6 +519,7 @@ def MetricReport(X, y, y_test, y_pred, dtc):
     MeanSqErr(y_test, y_pred)
     DTCScore(X, y, dtc)
     print("-" * 16)
+
 
 def tree_viz(dtc, df, col_names):
     class_n = "Class"
@@ -540,6 +551,7 @@ def minorEDA(df):
     print(df.info())
     print(lineBreak*3)
 
+
 def check_integrity(input_df):
     """  Check if values missing, generate list of cols with NaN indices
      Args:
@@ -562,6 +574,7 @@ def check_integrity(input_df):
     else:
         pass
     print("\nNo Missing Data Was Detected.")
+
 
 path = 'C:\\Users\\ajh20\\Desktop\\hepatitis.csv'
 col_names = ['Class', 'Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise','Anorexia', 'Liver_Big', 'Liver_Firm',
