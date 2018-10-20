@@ -17,9 +17,13 @@ Supervised learning is an approach for engineering predictive models from **know
 
 Objective is to infer class labels from previously unseen data.
 
+Algorithmically, it is a recursive and greedy solution. 
+
 Is a sequence of if-else questions about features.
 
 Captures non-linear relationships between features and labels.
+
+Is non-parametric, based on observed data and does not assume a normal distribution.
 
 No feature is scaling required.
 
