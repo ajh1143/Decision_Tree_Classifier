@@ -79,7 +79,7 @@ Summarizes error rate in terms of true/false positives/negatives.
 While the rest of the tests outlined above return simple numbers to interpret, the confusion matrix needs a primer on interpetation.
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>
 
-Calling `confusion_matrix()` will yield a result in the form:
+Calling `confusion_matrix()` will yield a result in the form:    
 `[TP,FP]`   
 `[FP,TP]`  
 
