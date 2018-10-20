@@ -200,7 +200,7 @@ y_pred = dt.predict(X_test)
 
 ## 7-Check Performance Metrics
 
-We want to check the accuracy of our model, and we can do so simply by calling `accuracy_score()` with `y_test` and `y_pred`.
+We want to check the accuracy of our model, so let's run through some performance metrics. 
 
 **Accuracy Score**
 ```Python3
@@ -232,8 +232,8 @@ def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
 ```    
-**Combine Them**
-Thanks to the power of Python, we can run all of the tests in one go:
+**Summary Report**
+Thanks to the power of Python, we can run all of the tests in one go via scripting:
 ```Python3
 def MetricReport(X, y, y_test, y_pred, dtc):
     print("Metric Summaries")
