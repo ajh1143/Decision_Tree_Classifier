@@ -1,7 +1,7 @@
 # Decision Tree Classifier
 
 ## Classification and regression trees (CART) Algorithms
-CART algorithms are `Supervised` learning models used for problems involving classification and regression.
+CART algorithms are `Supervised` learning models used for problems involving **classification** and **regression**.
 
 ## Supervised Learning
 Supervised learning is an approach for engineering predictive models from **known** labeled data, meaning the dataset already contains the targets appropriately classed. Our goal is to allow the algorithm to build a model from this known data, to predict future labels (outputs), based on our features (inputs) when introduced to a novel dataset.
@@ -43,7 +43,7 @@ Here's a general schematic view of the concept.
 `Source: https://www-users.cs.umn.edu/~kumar001/dmbook/dmslides/chap4_basic_classification.pdf`
 
 ## Model Concerns
-As powerful as the technique can be, it needs a strong foundation and human-level quality control.
+As powerful as the technique can be, it needs a strong foundational awareness and human-level quality controls.
 
 Here are some points to consider as you prepare for your ML task:
 
@@ -57,9 +57,9 @@ Here are some points to consider as you prepare for your ML task:
 
 ## Performance Metrics
 
-It should be noted at the onset, that simple Decision Trees are highly prone to **overfitting**, leading to models which are **difficult to generalize**. One method of mitigating this potential risk is to engage in **pruning** of the tree, i.e., removing parts of the tree which confer no/low power to the model. We will discuss methods of pruning shortly. 
+It should be noted at the onset, that simple decision trees are highly prone to **overfitting**, leading to models which are **difficult to generalize**. One method of mitigating this potential risk is to engage in **pruning** of the tree, i.e., removing parts of the tree which confer too much specificity to the model. We will discuss methods of pruning shortly. 
 
-A cautious interpretation of seemingly powerful results is encouraged.
+*A cautious interpretation of seemingly powerful results is strongly encouraged.
 
 **Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
 
@@ -67,11 +67,9 @@ A cautious interpretation of seemingly powerful results is encouraged.
 * `accuracy_score(y_test, y_pred)`    
 The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points.  
 
-
 **Mean Squared Error**  
 * `mean_squared_error(y_test, y_pred)`    
 Computed average squared difference between the estimated values, and what is being estimated.  
-
 
 **Mean Absolute Error**  
 * `mean_absolute_error(y_test, y_pred)`    
@@ -89,7 +87,7 @@ Identifies the features with the most weight in the model.
 * `confusion_matrix(y_test, y_pred)`    
 Summarizes error rate in terms of true/false positives/negatives.    
 
-While the rest of the tests outlined above return simple numbers to interpret, the confusion matrix needs a primer on interpetation.
+While the rest of the tests outlined above return simple numbers to interpret, the confusion matrix needs a primer on output.
 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/matrix.png" class="inline"/><br>    
 `Source: https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-S4-S2`
@@ -103,7 +101,7 @@ Calling `confusion_matrix()` will yield a result in the form:
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/tree_anatomy.jpeg" class="inline"/><br>
 `Source: Data Structure Tree Diagram - artbattlesu.com`
 
-Unlike common linear data structures, like `lists` and `arrays`, a `Tree` is a non-linear, hierarchical method of storing/modeling data. Visually, you can picture an evolutionary tree, a `document object model (DOM)` from HTML, or even a flow chart of a company hierarchy. 
+Unlike common linear data structures, like `lists` and `arrays`, a `Tree` is a non-linear, hierarchical method of storing/modeling data. Visually, you can picture an evolutionary tree, a `document object model (DOM)` from HTML, or even a company's organizational flowchart. 
 
 In contrast to a biological tree originating of kingdom plantae, the data structure tree has a simple anatomy:
 
@@ -131,7 +129,7 @@ The **height**, refers to the number of edges in the longest possible path of th
 
 A decision tree, allows us to run a series of **if/elif/else** tests/questions on a data point, record, or observation with many attributes to be tested. Each node of this tree, would represent some condition of an attribute to test, and the edges/links are the results of this test constrained to some kind of binary decision. An observation travels through each stage, being assayed and partitioned, to reach a leaf node. The leaf contains the final proposed classification. 
 
-For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender(M/F/O), weight(Above/Below a value), height(Above/Below a value), activities(Sets of choices) to make a prediction. 
+For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender(M/F/O), weight(Above/Below a value), height(Above/Below a value), activities(Sets of choices) to make a class-level prediction. 
 
 ## Classification Plot - Simple
 
