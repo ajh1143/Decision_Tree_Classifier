@@ -268,7 +268,7 @@ https://archive.ics.uci.edu/ml/datasets/Hepatitis
 
 ```Python3
 path = '...hepatitis.csv'
-col_names = ['Class', 'Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise','Anorexia', 'Liver_Big', 'Liver_Firm',
+col_names = ['Class', 'Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise','Anorexia', 'Liver_Big', 'Liver_Firm',    
              'Spleen_Palp', 'Spiders', 'Ascites', 'Varices', 'Bilirubin', 'Alk_Phosph', 'SGOT', 'Albumin', 'Protime',
              'Histology' ]
 csv = pd.read_csv(path, na_values=["?"], names=col_names)
@@ -425,7 +425,7 @@ def tree_viz(dtc, df, col_names):
 ## Run
 ```Python3
 path = 'C:\\Users\\ajh20\\Desktop\\hepatitis.csv'
-col_names = ['Class', 'Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise','Anorexia', 'Liver_Big', 'Liver_Firm',
+col_names = ['Class', 'Age', 'Sex', 'Steroid', 'Antivirals', 'Fatigue', 'Malaise','Anorexia', 'Liver_Big', 'Liver_Firm',    
              'Spleen_Palp', 'Spiders', 'Ascites', 'Varices', 'Bilirubin', 'Alk_Phosph', 'SGOT', 'Albumin', 'Protime',
              'Histology' ]
 csv = pd.read_csv(path, na_values=["?"], names=col_names)
