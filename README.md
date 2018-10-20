@@ -81,7 +81,7 @@ While the rest of the tests outlined above return simple numbers to interpret, t
 
 Calling `confusion_matrix()` will yield a result in the form:    
 `[TP,FP]`   
-`[FP,TP]`  
+`[FN,TN]`  
 
 ## Tree Data Structure - Fundamentals
 ### Reference Image
