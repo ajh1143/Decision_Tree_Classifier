@@ -148,6 +148,43 @@ Identification of which features/columns with the highest weights in predictive 
 
 In our case, the CART algorithm will do the feature selection for us through the `Gini Index` or `Entropy` which measure how pure your data is partitioned through it's journey to a final leaf node classification.
 
+## What is Purity?    
+**Measures:**    
+Effectiveness of class separation   
+**Types:**    
+* Entropy
+* Gini    
+**Goal:**        
+Purely separate leaf class outcomes    
+
+## Gini Accuracy Test, Multiple `Max_Depths`
+```Python3
+def gini_depth_test(depth, X_train, y_train, y_test, X_test):
+    df = pd.DataFrame(columns=['Depth', 'Accuracy'])
+    df = df.set_index('Depth')
+    for cur_depth in range(depth):
+      dtc_gini = DecisionTreeClassifier(max_depth=cur_depth, criterion='gini', random_state=1)
+      dtc_gini.fit(X_train,y_train)
+      y_pred_gini = dtc_gini.predict(X_test)
+      gini_score = accuracy_score(y_test, y_pred_gini)
+      df.append([{'Depth': cur_depth}, {'Accuracy':gini}], ignore_index=True)
+      return df
+```
+
+## Entropy Accuracy Test, Multiple `Max_Depths`    
+```Python3
+def entropy_depth_test(depth, X_train, y_train, y_test, X_test):
+    df = pd.DataFrame(columns=['Depth', 'Accuracy'])
+    df = df.set_index('Depth')
+    for cur_depth in range(depth):
+      dtc_entropy = DecisionTreeClassifier(max_depth=cur_depth, criterion='entropy', random_state=1)
+      dtc_entropy.fit(X_train,y_train)
+      y_pred_entropy = dtc_entropy.predict(X_test)
+      entropic_score = accuracy_score(y_test, y_pred_entropy)
+      df.append([{'Depth': cur_depth}, {'Accuracy':entropic_score}], ignore_index=True)
+      return df
+```
+
 ## Pruning
 As we discussed earlier, decision trees are prone to overfitting. **Pruning** is one way to mitigate the influence. As each node is a test, and each branch is a result of this test, we can **prune** unproductive branches which contribute to overfitting. By removing them, we can further generalize the model.
 
