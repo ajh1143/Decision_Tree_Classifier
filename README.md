@@ -71,9 +71,9 @@ It should be noted at the onset, that simple decision trees are highly prone to 
 * `accuracy_score(y_test, y_pred)`    
 The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points.  
 
-**Classification Report** 
-*confusion_matrix(y_test, y_pred)*    
-The confusion matrix produces  `precision  recall  f1-score   support` results.
+**Classification Report**    
+* `confusion_matrix(y_test, y_pred)`        
+The confusion matrix produces  `precision  recall  f1-score   support` results.    
 
 **Confusion Matrix**  
 * `confusion_matrix(y_test, y_pred)`    
