@@ -33,7 +33,9 @@ Let's briefly set a mental framework for approaching the creation of a classific
 
 Like all things data, we'll begin with a dataset. 
 
-Next, we'll need to break it into **training** and **test** sets. 
+Contained in the dataset(hopefully!) is organized tabular data with **records/observations, features**, and a **target**.
+
+Next, we'll need to use these to create **training** and **test** sets. 
 
 We can then use the **training** dataset with a learning algorithm (in our case, the **scikit-learn DecisionTreeClassifier** module) to create a **model** via **induction**, which is then applied to make predictions on the test set of data through **deduction**. 
 
