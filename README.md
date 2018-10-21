@@ -493,6 +493,11 @@ def MetricReport(X, y, y_test, y_pred, dtc):
     classification_report(y_test, y_pred)
     print("-" * 16)
 ```
+## Feature Weights
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/features.png" class="inline"/><br>
+
+## Report
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/metric_report.png" class="inline"/><br>
 
 ## Visualize Tree Graph
 ```Python3
