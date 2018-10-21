@@ -65,17 +65,19 @@ It should be noted at the onset, that simple decision trees are highly prone to 
 
 **Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
 
+### Classification & General Metrics    
+
 **Accuracy Score**  
 * `accuracy_score(y_test, y_pred)`    
 The accuracy score is calculated through the ratio of the correctly predicted data points divided by all predicted data points.  
 
-**Mean Squared Error**  
-* `mean_squared_error(y_test, y_pred)`    
-Computed average squared difference between the estimated values, and what is being estimated.  
+**Classification Report** 
+*confusion_matrix(y_test, y_pred)*    
+The confusion matrix produces  `precision  recall  f1-score   support` results.
 
-**Mean Absolute Error**  
-* `mean_absolute_error(y_test, y_pred)`    
-The mean absolute error reflects the magnitude of difference between the prediction and actual.  
+**Confusion Matrix**  
+* `confusion_matrix(y_test, y_pred)`    
+Summarizes error rate in terms of true/false positives/negatives.  
 
 **Score**  
 * `score(features, target)`    
@@ -85,9 +87,16 @@ Mean accuracy on the given test data and labels
 * `model.feature_importances_`    
 Identifies the features with the most weight in the model.
 
-**Confusion Matrix**  
-* `confusion_matrix(y_test, y_pred)`    
-Summarizes error rate in terms of true/false positives/negatives.    
+### Regression Metrics
+Even though we'll be sticking to using the Classification portion of the CART suite, let's briefly review the methods of regression performance analysis. 
+
+**Mean Squared Error**  
+* `mean_squared_error(y_test, y_pred)`    
+Computed average squared difference between the estimated values, and what is being estimated.  
+
+**Mean Absolute Error**  
+* `mean_absolute_error(y_test, y_pred)`    
+The mean absolute error reflects the magnitude of difference between the prediction and actual.  
 
 While the rest of the tests outlined above return simple numbers to interpret, the confusion matrix needs a primer on output.
 
@@ -273,6 +282,13 @@ def AccuracyCheck(model, X_test, y_pred):
     acc = accuracy_score(y_test, y_pred)
     print('Default Accuracy: {}'.format(round(acc), 3))
 ```
+**Classification Report** 
+```Python3
+def ClassificationReport(y_test, y_pred):
+    cr = classification_report(y_test, y_pred)
+    print('Classification Reort: \n{}'.format(cr))
+```
+
 **Confusion Matrix**
 ```Python3
 def ConfusionMatx(y_test, y_pred):
