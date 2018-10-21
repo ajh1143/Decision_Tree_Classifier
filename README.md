@@ -191,10 +191,10 @@ def entropy_depth_test(depth, X_train, y_train, y_test, X_test):
 As we discussed earlier, decision trees are prone to overfitting. **Pruning** is one way to mitigate the influence. As each node is a test, and each branch is a result of this test, we can **prune** unproductive branches which contribute to overfitting. By removing them, we can further generalize the model.
 
 ## Pre-Pruning
-One strategy for pruning is known as **pre-pruning**. This method relies on ending the series of tests early, stopping the partitioning process. When stopped, what was previously a non-leaf node, becomes the leaf node and a class is declared. 
+One strategy for pruning is known as **pre-pruning**. This method relies on ending the series of tests early, stopping the partitioning process. When stopped, what was previously a non-leaf node, becomes the leaf node and a class is declared. We can also utilize the validation set to check for overfitting. 
 
 ## Post-Pruning
-**Post-Pruning** is a different approach. Where **pre-pruning** occurs during creation of the model, **post-pruning** begins after the process is complete through the removal of branches. Sets of node removals are tested throughout the branches, to examine the effect on error-rates. If removing particular nodes increases the error-rate, pruning does not occur at those positions. The final tree contains a version of the tree with the lowest expected error-rate. 
+**Post-Pruning** is a different approach. Where **pre-pruning** occurs during creation of the model, **post-pruning** begins after the process is complete through the removal of branches. Sets of node removals are tested throughout the branches, to examine the effect on error-rates. If removing particular nodes increases the error-rate, pruning does not occur at those positions. The final tree contains a version of the tree with the lowest expected error-rate. In this process, we end the tree when performance on the validation set begins losing performance. 
 
 ## Decision Tree Classification: Steps to Build and Run
 
