@@ -312,7 +312,8 @@ def feature_finder(df, model):
     :return none:
     """
     features = dict(zip(df.columns, model.feature_importances_))
-    print(features)
+    for feature, score in features.items():
+        print(feature, round(score,3))
 ```
 **Summary Report**    
 Thanks to the power of Python, we can run all of the tests in one go via scripting:
@@ -462,12 +463,15 @@ def AccuracyCheck(model, X_test, y_pred):
     acc = accuracy_score(y_test, y_pred)
     print('Default Accuracy: {}'.format(round(acc), 3))
     
+    
 def ConfusionMatx(y_test, y_pred):
     print('Confusion Matrix: \n{}'.format(confusion_matrix(y_test, y_pred)))
+
 
 def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
+
 
 def feature_finder(df, model):
     """
@@ -477,8 +481,10 @@ def feature_finder(df, model):
     :return none:
     """
     features = dict(zip(df.columns, model.feature_importances_))
-    print(features)
-
+    for feature, score in features.items():
+        print(feature, round(score,3))
+        
+        
 def MetricReport(X, y, y_test, y_pred, dtc):
     print("Metric Summaries")
     print("-"*16)
@@ -603,7 +609,8 @@ def feature_finder(df, model):
     :return none:
     """
     features = dict(zip(df.columns, model.feature_importances_))
-    print(features)
+    for feature, score in features.items():
+        print(feature, round(score,3))
 
 
 def gini_depth_test(depth, X_train, y_train, y_test, X_test):
