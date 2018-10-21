@@ -151,9 +151,11 @@ In our case, the CART algorithm will do the feature selection for us through the
 ## What is Purity?    
 **Measures:**    
 Effectiveness of class separation   
+
 **Types:**    
 * Entropy
 * Gini    
+
 **Goal:**        
 Purely separate leaf class outcomes    
 
