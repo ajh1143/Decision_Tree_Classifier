@@ -295,24 +295,13 @@ def ConfusionMatx(y_test, y_pred):
     print('Confusion Matrix: \n{}'.format(confusion_matrix(y_test, y_pred)))
 ```
 
-**Mean Absolute Error**
-```Python3
-def MeanAbsErr(y_test, y_pred):
-    mean_err = metrics.mean_absolute_error(y_test, y_pred)
-    print('Mean Absolute Error: {}'.format(round(mean_err), 3))
-```
-**Mean Squared Error**
-```Python3
-def MeanSqErr(y_test, y_pred):
-    SqErr = metrics.mean_squared_error(y_test, y_pred)
-    print('Mean Squared Error: {}'.format(round(SqErr), 3))
-```
 **Score**
 ```Python3
 def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
 ```    
+
 **Feature Importance**
 ```Python3
 def feature_finder(df, model):
@@ -331,11 +320,9 @@ Thanks to the power of Python, we can run all of the tests in one go via scripti
 def MetricReport(X, y, y_test, y_pred, dtc):
     print("Metric Summaries")
     print("-"*16)
-    AccuracyCheck(model, X_test, y_pred)
-    MeanAbsErr(y_test, y_pred)
-    MeanSqErr(y_test, y_pred)
-    DTCScore(X, y, dtc)
     ConfusionMatx(y_test, y_pred)
+    DTCScore(X, y, dtc)
+    classification_report(y_test, y_pred)
     print("-" * 16)
 ```
 
@@ -478,14 +465,6 @@ def AccuracyCheck(model, X_test, y_pred):
 def ConfusionMatx(y_test, y_pred):
     print('Confusion Matrix: \n{}'.format(confusion_matrix(y_test, y_pred)))
 
-def MeanAbsErr(y_test, y_pred):
-    mean_err = metrics.mean_absolute_error(y_test, y_pred)
-    print('Mean Absolute Error: {}'.format(round(mean_err), 3))
-
-def MeanSqErr(y_test, y_pred):
-    SqErr = metrics.mean_squared_error(y_test, y_pred)
-    print('Mean Squared Error: {}'.format(round(SqErr), 3))
-
 def DTCScore(X, y, dtc):
     score = dtc.score(X, y, sample_weight=None)
     print('Score: {}'.format(round(score)))
@@ -500,14 +479,12 @@ def feature_finder(df, model):
     features = dict(zip(df.columns, model.feature_importances_))
     print(features)
 
-def MetricReport(df, X, y, y_test, y_pred, dtc, model):
+def MetricReport(X, y, y_test, y_pred, dtc):
     print("Metric Summaries")
     print("-"*16)
-    feature_finder(df, model)
     ConfusionMatx(y_test, y_pred)
-    MeanAbsErr(y_test, y_pred)
-    MeanSqErr(y_test, y_pred)
     DTCScore(X, y, dtc)
+    classification_report(y_test, y_pred)
     print("-" * 16)
 ```
 
@@ -538,9 +515,10 @@ X, y = set_target(df, 'Class')
 dtc = DecisionTree()
 X_train, X_test, y_train, y_test = TestTrain(X, y)
 model_test = FitData(dtc, X_train, y_train)
+feature_finder(df, model_test)
 y_pred = Predict(dtc, X_test)
-AccuracyCheck(model_test, X_test, y_pred)
-tree_viz(dtc, df, col_names)
+tree_viz(dtc, df)
+MetricReport(X, y, y_test, y_pred, dtc)
 ```
 
 ## All-In-One
@@ -627,16 +605,44 @@ def feature_finder(df, model):
     features = dict(zip(df.columns, model.feature_importances_))
     print(features)
 
-def MetricReport(df, X, y, y_test, y_pred, dtc, model):
+
+def gini_depth_test(depth, X_train, y_train, y_test, X_test):
+    df = pd.DataFrame(columns=['Depth', 'Accuracy'])
+    df = df.set_index('Depth')
+    for cur_depth in range(1,depth):
+      dtc_gini = DecisionTreeClassifier(max_depth=cur_depth, criterion='gini', random_state=1)
+      dtc_gini.fit(X_train,y_train)
+      y_pred_gini = dtc_gini.predict(X_test)
+      gini_score = accuracy_score(y_test, y_pred_gini)
+      df.append([{'Depth': cur_depth}, {'Accuracy':gini}], ignore_index=True)
+      return df
+
+
+def entropy_depth_test(depth, X_train, y_train, y_test, X_test):
+    df = pd.DataFrame(columns=['Depth', 'Accuracy'])
+    df = df.set_index('Depth')
+    for cur_depth in range(1,depth):
+      dtc_entropy = DecisionTreeClassifier(max_depth=cur_depth, criterion='entropy', random_state=1)
+      dtc_entropy.fit(X_train,y_train)
+      y_pred_entropy = dtc_entropy.predict(X_test)
+      entropic_score = accuracy_score(y_test, y_pred_entropy)
+      df.append([{'Depth': cur_depth}, {'Accuracy':entropic_score}], ignore_index=True)
+      return df
+
+
+def class_report(y_test, y_pred):
+    report = classification_report(y_test, y_pred)
+    print(report)
+
+
+def MetricReport(X, y, y_test, y_pred, dtc):
     print("Metric Summaries")
     print("-"*16)
-    feature_finder(df, model)
     ConfusionMatx(y_test, y_pred)
-    MeanAbsErr(y_test, y_pred)
-    MeanSqErr(y_test, y_pred)
     DTCScore(X, y, dtc)
+    class_report(y_test, y_pred)
     print("-" * 16)
-
+    
 
 def tree_viz(dtc, df, col_names):
     class_n = "Class"
