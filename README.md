@@ -805,7 +805,7 @@ def plot_features(feature_dict):
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/myplot.png" class="inline"/><br>  
 
 ## Metric Report
-```
+```Python3
         
 def MetricReport(X, y, y_test, y_pred, dtc):
 
