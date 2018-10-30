@@ -237,7 +237,7 @@ def gini_depth_test(depth, X_train, y_train, y_test, X_test):
 
     return df
 ```
-[INSERT IMAGE DEPTHS GINI]
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/depths.png" class="inline"/><br>  
 
 ## Entropy Accuracy Test, Multiple `Max_Depths`    
 ```Python3
@@ -280,7 +280,7 @@ def entropy_depth_test(depth, X_train, y_train, y_test, X_test):
 
     return df
 ```
-[INSERT IMAGE DEPTHS ENTROPY]
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/depth_2.png" class="inline"/><br>  
 
 ## Pruning
 As we discussed earlier, decision trees are prone to overfitting. 
@@ -310,7 +310,7 @@ One strategy for pruning is known as **pre-pruning**. This method relies on endi
 
 7 **Check Performance Metrics**
 
-## 1-Import Modules/Libraries [SciKit-Learn]
+## 1-Import Modules/Libraries 
 ```Python3
 from sklearn.tree import DecisionTreeClassifier 
  
@@ -387,6 +387,7 @@ def AccuracyCheck(model, X_test, y_pred):
 
     print('Default Accuracy: {}'.format(round(acc), 3))
 ```
+
 **Classification Report** 
 ```Python3
 def ClassificationReport(y_test, y_pred):
@@ -801,7 +802,7 @@ def plot_features(feature_dict):
 
     plt.show()
  ```
-[INSERT FEATURE WEIGHT IMAGE PLOT]
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/myplot.png" class="inline"/><br>  
 
 ## Metric Report
 ```
