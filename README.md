@@ -6,6 +6,7 @@ You can, with the help of a decision tree.
 
 Machine learning reveals a unique view of the data, but you still need to think for yourself.
 
+_______________________________________________________________________________________________________________________________________
 
 ## The Agenda
 
@@ -16,6 +17,8 @@ Machine learning reveals a unique view of the data, but you still need to think 
 Today, let’s focus specifically on the classification portion of the CART set of algorithms, by utilizing SciKit-Learn’s Decision Tree Classifier module to build machine learning solutions.
 
 Let's begin by diving into the basics.
+
+_______________________________________________________________________________________________________________________________________
 
 # PART I - FOUNDATIONS    
 ## Classification and regression trees (CART) Algorithms
@@ -44,7 +47,7 @@ Let's begin by diving into the basics.
 * Is **non-parametric**, based on observed data and does not assume a normal distribution.
 
 * Doesn't require **pre-processing**/feature scaling
-
+_______________________________________________________________________________________________________________________________________
 
 ## Classification Model - Approach
 
@@ -62,7 +65,7 @@ Here's a general schematic view of the concept.
 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/workflow.png" class="inline"/><br>    
 `Source: https://www-users.cs.umn.edu/~kumar001/dmbook/dmslides/chap4_basic_classification.pdf`
-
+_______________________________________________________________________________________________________________________________________
 ## Model Concerns
 As powerful as the technique can be, it needs a strong foundational awareness and human-level quality controls.
 
@@ -75,7 +78,7 @@ Here are some points to consider as you prepare for your **ML** task:
 **C)** Are you providing your model **clean data**?
 
 **D)** Are you able to prevent algorithmic **biases and confounding factors**?
-
+_______________________________________________________________________________________________________________________________________
 ## Performance Metrics
 
 It should be noted at the onset, that simple decision trees are **highly prone** to **overfitting**, leading to models which are **difficult to generalize**. One method of mitigating this potential risk is to engage in **pruning** of the tree, i.e., removing parts of the tree which confer too much **specificity** to the model. We will discuss methods of pruning shortly. 
@@ -83,7 +86,7 @@ It should be noted at the onset, that simple decision trees are **highly prone**
 *A cautious interpretation of seemingly powerful results is strongly encouraged.
 
 **Goal**: Achieve the highest possible **accuracy**, while retaining the lowest **error rate**.
-
+_______________________________________________________________________________________________________________________________________
 ### Classification & General Metrics    
 
 **Accuracy Score**  
@@ -114,7 +117,7 @@ While the rest of the tests outlined above return simple numbers to interpret, t
 Calling `confusion_matrix()` will yield a result in the form:    
 `[TP,FP]`   
 `[FN,TN]`  
-
+_______________________________________________________________________________________________________________________________________
 ### Regression Metrics
 Even though we'll be sticking to using the Classification portion of the CART suite, let's briefly review the methods of regression performance analysis. 
 
@@ -130,7 +133,7 @@ Computed average squared difference between the estimated values, and what is be
 * `mean_absolute_error(y_true, y_pred)`    
 The mean absolute error reflects the magnitude of difference between the prediction and actual.  
 
-
+_______________________________________________________________________________________________________________________________________
 ## Tree Data Structure - Fundamentals
 ### Reference Image
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/tree_anatomy.jpeg" class="inline"/><br>
@@ -165,7 +168,7 @@ The **height**, refers to the number of edges in the longest possible path of th
 A **decision tree**, allows us to run a series of **if/elif/else** tests/questions on a data point, record, or observation with many attributes to be tested. Each node of this tree, would represent some condition of an attribute to test, and the edges/links are the results of this test constrained to some kind of binary decision. An observation travels through each stage, being assayed and partitioned, to reach a leaf node. The leaf contains the final proposed classification. 
 
 For example, if we had a dataset with rich features about a human, we could ask many questions about that person and their behavior based on gender(M/F/O), weight(Above/Below a value), height(Above/Below a value), activities(Sets of choices) to make a class-level prediction. 
-
+_______________________________________________________________________________________________________________________________________
 ## Classification Plot - Simple
 
 |              |               |
@@ -176,13 +179,13 @@ For example, if we had a dataset with rich features about a human, we could ask 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/Boundary.jpg" class="inline"/><br>  
 `Source: Vipin Kumar CSci 8980 Fall 2002 13 Oblique Decision Trees`
 
-
+_______________________________________________________________________________________________________________________________________
 ## Feature Selection
 
 Identification of which features/columns with the highest weights in predictive power. We can manually view the importance of our features with `model.feature_importances_` as noted earlier.
 
 In our case, the CART algorithm will do the feature selection for us through the **Gini Index** or **Entropy** which measure how pure your data is partitioned through it's journey to a final leaf node classification.
-
+_______________________________________________________________________________________________________________________________________
 ## What is Purity?    
 **Measures:**    
 Effectiveness of class separation   
@@ -238,7 +241,7 @@ def gini_depth_test(depth, X_train, y_train, y_test, X_test):
     return df
 ```
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/depths.png" class="inline"/><br>  
-
+_______________________________________________________________________________________________________________________________________
 ## Entropy Accuracy Test, Multiple `Max_Depths`    
 ```Python3
 def entropy_depth_test(depth, X_train, y_train, y_test, X_test):
@@ -281,7 +284,7 @@ def entropy_depth_test(depth, X_train, y_train, y_test, X_test):
     return df
 ```
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/depth_2.png" class="inline"/><br>  
-
+_______________________________________________________________________________________________________________________________________
 ## Pruning
 As we discussed earlier, decision trees are prone to overfitting. 
 
@@ -292,7 +295,7 @@ One strategy for pruning is known as **pre-pruning**. This method relies on endi
 
 ## Post-Pruning
 **Post-Pruning** is a different approach. Where **pre-pruning** occurs during creation of the model, **post-pruning** begins after the process is complete through the **removal of branches**. Sets of node removals are tested throughout the branches, to examine the effect on error-rates. If removing particular nodes increases the error-rate, pruning does not occur at those positions. The final tree contains a version of the tree with the **lowest expected error-rate**. In this process, we end the tree when performance on the validation set begins losing performance. 
-
+_______________________________________________________________________________________________________________________________________
 ## PART II - THE WORKFLOW     
 ## Steps to Build and Run    
 
@@ -309,7 +312,7 @@ One strategy for pruning is known as **pre-pruning**. This method relies on endi
 6 **Predict**
 
 7 **Check Performance Metrics**
-
+_______________________________________________________________________________________________________________________________________
 ## 1-Import Modules/Libraries 
 ```Python3
 from sklearn.tree import DecisionTreeClassifier 
@@ -492,7 +495,7 @@ def MetricReport(X, y, y_test, y_pred, dtc):"""
     
     print("-" * 16) 
 ```
-
+_______________________________________________________________________________________________________________________________________
 # PART III - CASE STUDY
 ## Hepatitis Survival
 
@@ -855,7 +858,7 @@ graph.render('Hep', view=True)
 ```
 
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/DTC/graph_viz.png" class="inline"/><br>
-
+_______________________________________________________________________________________________________________________________________
 ## Run
 ```Python3
 if __name__ == '__main__': 
@@ -896,10 +899,10 @@ tree_viz(dtc, classes, col_names)
 
 MetricReport(X, y, y_test, y_pred, dtc) 
 ```
-
+_______________________________________________________________________________________________________________________________________
 ## Review:    
 We've learned what CART algorithms are, when to use the, and some of their quirks. We also developed an understanding of tree data structures, performance metrics for classification and regression, built some great reusable tools and applied our knowledge through a study on hepatitis sutvival.
-
+_______________________________________________________________________________________________________________________________________
 ## Full Code
 ```Python3
 import pandas as pd 
